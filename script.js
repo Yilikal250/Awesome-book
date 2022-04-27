@@ -61,3 +61,12 @@ formSubmit.addEventListener('click', (e) => {
   // add book to bookStore
   addBook(bookTitle, bookAuthor);
 });
+
+// update the browser with content of array
+window.addEventListener('DOMContentLoaded', () => {
+  let books  = localStorage.getItem('books');
+  if(books){
+    bookStore = JSON.parse(books);
+    bookStore.forEach(book => UpdateBrowser(book));
+  }
+})
