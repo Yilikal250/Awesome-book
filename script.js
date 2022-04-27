@@ -1,18 +1,18 @@
+// eslint-disable max-classes-per-file
+
 const formSubmit = document.querySelector('.submitBtn');
 const { forms } = document;
 const bookList = document.querySelector('.book-list');
 let bookStore = [];
 
-class Book {
+// Ui class - handle ui tasks
+class UserInterface {
   constructor(title, author) {
     this.title = title;
     this.author = author;
     this.id = new Date().valueOf();
   }
-}
 
-// Ui class - handle ui tasks
-class UserInterface {
   static updateBrowser(book) {
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book-holder');
@@ -72,7 +72,7 @@ formSubmit.addEventListener('click', (e) => {
   fields.title.value = '';
   fields.author.value = '';
   // add book to bookStore
-  const book = new Book(title, author);
+  const book = new UserInterface(title, author);
   UserInterface.addBook(book);
 });
 // remove element from bookstore on click
