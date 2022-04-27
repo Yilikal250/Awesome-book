@@ -3,6 +3,42 @@ const { forms } = document;
 const bookList = document.querySelector('.book-list');
 let bookStore = [];
 
+// create book class
+//create interface class
+//
+
+class Book {
+  constructor(bookTitle, bookAuthor, bookId){
+    this.bookTitle = bookTitle;
+    this.bookAuthor = bookAuthor;
+    this.bookId = bookId;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // add books to the broswer
 function UpdateBrowser(book) {
   const bookDiv = document.createElement('div');
