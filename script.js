@@ -1,11 +1,8 @@
-// eslint-disable max-classes-per-file
-
 const formSubmit = document.querySelector('.submitBtn');
 const { forms } = document;
 const bookList = document.querySelector('.book-list');
 let bookStore = [];
 
-// Ui class - handle ui tasks
 class UserInterface {
   constructor(title, author) {
     this.title = title;
@@ -53,7 +50,6 @@ class UserInterface {
     if (book.title !== '' || book.author !== '') {
       bookStore.push(book);
       localStorage.setItem('books', JSON.stringify(bookStore));
-      // add book to browser
       UserInterface.updateBrowser(book);
     }
   }
@@ -61,6 +57,7 @@ class UserInterface {
 
 // display books on page load and on refresh
 document.addEventListener('DOMContentLoaded', UserInterface.displayBooks());
+
 // Add a book on form submission
 formSubmit.addEventListener('click', (e) => {
   e.preventDefault();
@@ -75,6 +72,7 @@ formSubmit.addEventListener('click', (e) => {
   const book = new UserInterface(title, author);
   UserInterface.addBook(book);
 });
+
 // remove element from bookstore on click
 bookList.addEventListener('click', (e) => {
   // check if clicked element is delete button
