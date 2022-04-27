@@ -17,15 +17,23 @@
       </ul>
     </nav>
 
-    <h1 class="page-title">Awesome books</h1>
-    <div class="book-list">
-    </div>
-    <form action="./index.html" method="POST" name="book-form">
-      <input type="text" placeholder="Title" name="title" aria-label="fill in book title"><br>
-      <input type="text" placeholder="Author" name="author" aria-label="fill in book author's name"><br>
-      <input type="submit" value="Add" aria-label="Submit the form" class="submitBtn">
-    </form>
+    <section class="list-books">
+      <h1 class="page-title">Awesome books</h1>
+      <div class="book-list">
+      </div>
+    </section>
+
+    <section class="add-books"> 
+      <h1 class="page-title">Add a new book</h1> 
+      <form action="./index.html" method="POST" name="book-form">
+        <input type="text" placeholder="Title" name="title" aria-label="fill in book title"><br>
+        <input type="text" placeholder="Author" name="author" aria-label="fill in book author's name"><br>
+        <input type="submit" value="Add" aria-label="Submit the form" class="submitBtn">
+      </form>
+    </section>
+
   </div>
+
   <script src="script.js"></script>
   </body>
 </html>
