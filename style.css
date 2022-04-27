@@ -120,6 +120,10 @@ footer {
   text-align: center;
 }
 
+section {
+  margin: 5px 0;
+}
+
 section.hide {
   display:none;
 }
