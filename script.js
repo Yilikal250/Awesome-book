@@ -70,3 +70,24 @@ window.addEventListener('DOMContentLoaded', () => {
     bookStore.forEach(book => UpdateBrowser(book));
   }
 })
+
+// remove element from bookstore on click
+bookList.addEventListener('click', (e) => {
+    //check if clicked element is delete button
+    const targetElement = e.target.classList[0];
+    //console.log (targetBook);
+    if (targetElement === 'deleteBtn'){
+      //get book id
+      const bookId = +e.target.parentNode.childNodes[2].getAttribute('value');
+      // remove book from browser display
+      bookList.removeChild(e.target.parentNode);
+      //remove book from bookstore array
+      bookStore.forEach((book, index) => {
+        if(book.id === bookId){
+          bookStore.splice(index, 1);
+        }
+      })
+      localStorage.setItem('books', JSON.stringify(bookStore));
+    }
+  })
+  
