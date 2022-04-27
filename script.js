@@ -20,3 +20,31 @@ function addBook(bookTitle, bookAuthor) {
     UpdateBrowser(book)
   }
 }
+
+// add books to the broswer
+function UpdateBrowser(book) {
+  const bookDiv = document.createElement('div');
+  bookDiv.classList.add('book-holder');
+  // add book title
+  const titleP = document.createElement('p');
+  titleP.textContent = book.title;
+  // add author
+  const authorP = document.createElement('p');
+  authorP.textContent = book.writter;
+  // add hidden id field
+  const id = document.createElement('p');
+  id.setAttribute('type','hidden');
+  id.setAttribute('value', book.id)
+  //  create delete button
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Remove';
+  deleteBtn.classList.add('deleteBtn');
+  const line = document.createElement('hr');
+  
+  bookDiv.appendChild(titleP);
+  bookDiv.appendChild(authorP);
+  bookDiv.appendChild(id);
+  bookDiv.appendChild(deleteBtn);
+  bookDiv.appendChild(line);
+  bookList.appendChild(bookDiv);
+}
