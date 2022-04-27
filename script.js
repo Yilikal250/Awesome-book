@@ -85,7 +85,7 @@ bookList.addEventListener('click', (e) => {
   const targetElement = e.target.classList[0];
   if (targetElement === 'deleteBtn') {
     // get book id
-    const bookId  = +e.target.parentNode.childNodes[1].getAttribute('value');
+    const bookId = +e.target.parentNode.childNodes[1].getAttribute('value');
     // remove book from browser display
     bookList.removeChild(e.target.parentNode);
     // remove book from bookstore array
@@ -94,7 +94,6 @@ bookList.addEventListener('click', (e) => {
         bookStore.splice(index, 1);
       }
     });
-    console.log(bookStore);
     localStorage.setItem('books', JSON.stringify(bookStore));
   }
 });
