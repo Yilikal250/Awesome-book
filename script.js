@@ -82,7 +82,6 @@ bookList.addEventListener('click', (e) => {
   // console.log (targetBook);
   if (targetElement === 'deleteBtn') {
     // get book id
-    console.log(e.target.parentNode.childNodes[2]);
     const bookId = +e.target.parentNode.childNodes[2].getAttribute('value');
     // remove book from browser display
     bookList.removeChild(e.target.parentNode);
