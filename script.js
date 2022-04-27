@@ -48,3 +48,16 @@ function UpdateBrowser(book) {
   bookDiv.appendChild(line);
   bookList.appendChild(bookDiv);
 }
+
+formSubmit.addEventListener('click', (e) => {
+  e.preventDefault();
+  const form = forms['book-form'];
+  const fields = form.elements;
+  const bookTitle = fields['title'].value;
+  const bookAuthor = fields['author'].value;
+  //clear form fields
+  fields['title'].value = '';
+  fields['author'].value = '';
+  // add book to bookStore
+  addBook(bookTitle, bookAuthor);
+});
