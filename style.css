@@ -107,8 +107,19 @@ button {
   width: 120px;
   background-color: #fff;
   font-weight: bold;
+  box-shadow: 0px 2px 8px black;
 }
 
 .book-list > div:nth-child(odd) {
   background-color: rgba(21, 21, 21, 0.3);
+}
+
+footer {
+  border:1px solid black;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+section.hide {
+  display:none;
 }
