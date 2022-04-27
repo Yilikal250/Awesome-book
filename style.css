@@ -25,7 +25,6 @@ form input {
 }
 
 .book-holder {
-  /* outline:1px solid black; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +32,6 @@ form input {
 }
 
 .group-paragraph {
-  /* outline:1px solid red; */
   display: flex;
 }
 
@@ -107,7 +105,7 @@ button {
   width: 120px;
   background-color: #fff;
   font-weight: bold;
-  box-shadow: 0px 2px 8px black;
+  box-shadow: 0 2px 8px black;
 }
 
 .book-list > div:nth-child(odd) {
@@ -115,7 +113,7 @@ button {
 }
 
 footer {
-  border:1px solid black;
+  border: 1px solid black;
   flex-basis: 100%;
   text-align: center;
 }
@@ -125,5 +123,5 @@ section {
 }
 
 section.hide {
-  display:none;
+  display: none;
 }

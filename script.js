@@ -7,8 +7,7 @@ const contact = document.querySelector('.contact');
 
 const contactSection = document.querySelector('.contact-info');
 const addBooksSection = document.querySelector('.add-books');
-const listBksSection = document.querySelector('.list-books')
-
+const listBksSection = document.querySelector('.list-books');
 
 let bookStore = [];
 
@@ -132,4 +131,4 @@ listBooks.addEventListener('click', () => {
   contactSection.classList.add('hide');
   addBooksSection.classList.add('hide');
   listBksSection.classList.remove('hide');
-})
+});
