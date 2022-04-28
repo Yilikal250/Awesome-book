@@ -76,6 +76,7 @@ nav {
   list-style: none;
   border-right: 1px solid black;
   padding: 5px 10px;
+  margin-top: 30px;
 }
 
 .navlist li a {
