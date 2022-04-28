@@ -18,6 +18,12 @@ form input {
   padding: 15px 20px;
 }
 
+nav {
+  display: inline-flex;
+  /* stylelint-disable-next-line csstree/validator */
+  justify-content: baseline;
+}
+
 .add-books {
   display: flex;
   flex-wrap: wrap;
@@ -38,13 +44,32 @@ form input {
 .navbar {
   outline: 1px solid black;
   flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  width: 100vw;
 }
 
 .navlist {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 4px 0;
+  text-align: end;
+  margin-right: 90px;
+}
+
+#name {
+  margin-top: 20px;
+  font-size: 50px;
+  margin-left: 90px;
+  font-weight: bold;
+}
+
+#datelux {
+  display: flex;
+  justify-content: end;
+  margin-right: 80px;
+  font-weight: bold;
 }
 
 .navlist li {
