@@ -1,11 +1,8 @@
-// eslint-disable max-classes-per-file
-
 const formSubmit = document.querySelector('.submitBtn');
 const { forms } = document;
 const bookList = document.querySelector('.book-list');
 let bookStore = [];
 
-// Ui class - handle ui tasks
 class UserInterface {
   constructor(title, author) {
     this.title = title;
@@ -16,13 +13,20 @@ class UserInterface {
   static updateBrowser(book) {
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book-holder');
+
     // add book title
     const titleP = document.createElement('p');
-    titleP.textContent = book.title;
+    titleP.textContent = `"${book.title}" by \xa0`;
     // add author
     const authorP = document.createElement('p');
-    authorP.textContent = book.author;
+    authorP.textContent = ` ${book.author}`;
     // add hidden id field
+
+    const paraHolder = document.createElement('div');
+    paraHolder.appendChild(titleP);
+    paraHolder.appendChild(authorP);
+    paraHolder.classList.add('group-paragraph');
+
     const bookId = document.createElement('p');
     bookId.setAttribute('type', 'hidden');
     bookId.setAttribute('value', book.id);
@@ -30,12 +34,11 @@ class UserInterface {
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Remove';
     deleteBtn.classList.add('deleteBtn');
-    const line = document.createElement('hr');
-    bookDiv.appendChild(titleP);
-    bookDiv.appendChild(authorP);
+    // const line = document.createElement('hr');
+    bookDiv.appendChild(paraHolder);
     bookDiv.appendChild(bookId);
     bookDiv.appendChild(deleteBtn);
-    bookDiv.appendChild(line);
+    // bookDiv.appendChild(line);
     bookList.appendChild(bookDiv);
   }
 
@@ -53,7 +56,6 @@ class UserInterface {
     if (book.title !== '' || book.author !== '') {
       bookStore.push(book);
       localStorage.setItem('books', JSON.stringify(bookStore));
-      // add book to browser
       UserInterface.updateBrowser(book);
     }
   }
@@ -61,6 +63,7 @@ class UserInterface {
 
 // display books on page load and on refresh
 document.addEventListener('DOMContentLoaded', UserInterface.displayBooks());
+
 // Add a book on form submission
 formSubmit.addEventListener('click', (e) => {
   e.preventDefault();
@@ -75,14 +78,14 @@ formSubmit.addEventListener('click', (e) => {
   const book = new UserInterface(title, author);
   UserInterface.addBook(book);
 });
+
 // remove element from bookstore on click
 bookList.addEventListener('click', (e) => {
   // check if clicked element is delete button
   const targetElement = e.target.classList[0];
-  // console.log (targetBook);
   if (targetElement === 'deleteBtn') {
     // get book id
-    const bookId = +e.target.parentNode.childNodes[2].getAttribute('value');
+    const bookId = +e.target.parentNode.childNodes[1].getAttribute('value');
     // remove book from browser display
     bookList.removeChild(e.target.parentNode);
     // remove book from bookstore array
