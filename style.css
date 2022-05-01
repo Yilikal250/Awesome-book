@@ -18,6 +18,12 @@ form input {
   padding: 15px 20px;
 }
 
+nav {
+  display: inline-flex;
+  /* stylelint-disable-next-line csstree/validator */
+  justify-content: baseline;
+}
+
 .add-books {
   display: flex;
   flex-wrap: wrap;
@@ -25,7 +31,6 @@ form input {
 }
 
 .book-holder {
-  /* outline:1px solid black; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,26 +38,45 @@ form input {
 }
 
 .group-paragraph {
-  /* outline:1px solid red; */
   display: flex;
 }
 
 .navbar {
   outline: 1px solid black;
   flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  width: 100vw;
 }
 
 .navlist {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 4px 0;
+  text-align: end;
+  margin-right: 90px;
+}
+
+#name {
+  margin-top: 20px;
+  font-size: 50px;
+  margin-left: 90px;
+  font-weight: bold;
+}
+
+#datelux {
+  display: flex;
+  justify-content: end;
+  margin-right: 80px;
+  font-weight: bold;
 }
 
 .navlist li {
   list-style: none;
   border-right: 1px solid black;
   padding: 5px 10px;
+  margin-top: 30px;
 }
 
 .navlist li a {
@@ -107,8 +131,23 @@ button {
   width: 120px;
   background-color: #fff;
   font-weight: bold;
+  box-shadow: 0 2px 8px black;
 }
 
 .book-list > div:nth-child(odd) {
   background-color: rgba(21, 21, 21, 0.3);
+}
+
+footer {
+  border: 1px solid black;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+section {
+  margin: 5px 0;
+}
+
+section.hide {
+  display: none;
 }
